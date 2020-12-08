@@ -1,0 +1,127 @@
+CREATE DATABASE js
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Slovak_Slovakia.1250'
+    LC_CTYPE = 'Slovak_Slovakia.1250'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+    
+/*
+-- Table: public.order_item
+
+-- DROP TABLE public.order_item;
+
+CREATE TABLE public.order_item
+(
+    id SERIAL,
+    id_order integer NOT NULL,
+    id_product integer NOT NULL,
+    amount integer NOT NULL,
+    CONSTRAINT order_item_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.order_item
+    OWNER to postgres;
+*/
+
+
+/*
+CREATE TABLE public.costumer
+(
+    id SERIAL,
+    name character varying(255) COLLATE pg_catalog."default" NOT NULL UNIQUE,
+    address character varying(512) COLLATE pg_catalog."default" NOT NULL,
+    city character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    zip integer NOT NULL,
+    CONSTRAINT costumer_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.costumer
+    OWNER to postgres;
+*/
+	
+/*
+CREATE TABLE public."orders"
+(
+    id SERIAL,
+    id_costumer integer NOT NULL,
+    order_state character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT order_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."orders"
+    OWNER to postgres;
+*/
+	
+/*
+CREATE TABLE public.product
+(
+    id SERIAL,
+    name character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    picture character varying(512) COLLATE pg_catalog."default" NOT NULL,
+    price integer NOT NULL,
+    CONSTRAINT product_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.product
+    OWNER to postgres;	
+*/
+	
+/*
+CREATE TABLE public.counter
+(
+    id integer NOT NULL,
+    count bigint NOT NULL,
+    CONSTRAINT counter_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.counter
+    OWNER to postgres;
+*/
+	
+	
+/*
+CREATE TABLE public.cart
+(
+    id SERIAL,
+    id_product integer NOT NULL,
+    amount integer NOT NULL,
+    id_session character varying(512) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT cart_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.cart
+    OWNER to postgres;
+*/	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
