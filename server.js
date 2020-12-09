@@ -230,7 +230,7 @@ app.post('/counter',cors(), function (req, resp) {
 
     console.log(req.body);
 
-    var str = 'UPDATE counter SET count = count + \'1\' WHERE id = \'1\';';
+    var str = 'UPDATE counter SET counting = counting + \'1\' WHERE id = \'1\';';
 
     console.log(str);
 
@@ -278,6 +278,22 @@ app.get("/cart",cors(), (req, resp) => {
     });
     
 });
+
+// vratenie info o objednavkach
+app.get("/getInfo",cors(), (req, resp) => {
+    var str = 'SELECT * FROM public.order_item INNER JOIN public.product ON order_item.id_product = product.id WHERE order_item.id_order = ';
+    str += req.query.id_order.replace(':','');
+    str += ';';
+
+    console.log(str);
+
+    pool.query(str, (err, res, fields) => {
+        console.log(err, res.rows);
+        resp.json(res.rows);
+    });
+    
+});
+
 
 var server = app.listen(port, function () {
 console.log(`\nPostgres Node server is running on port: ${server.address().port}`)
