@@ -80,7 +80,7 @@ ALTER TABLE public.product
 CREATE TABLE public.counter
 (
     id integer NOT NULL,
-    count bigint NOT NULL,
+    counting bigint DEFAULT 0,
     CONSTRAINT counter_pkey PRIMARY KEY (id)
 )
 
@@ -89,7 +89,10 @@ TABLESPACE pg_default;
 ALTER TABLE public.counter
     OWNER to postgres;
 */
-	
+
+/*
+INSERT INTO counter (id, counting) VALUES (1, 0); 
+*/	
 	
 /*
 CREATE TABLE public.cart
